@@ -1,0 +1,30 @@
+echo "Hello World" > devops.txt     //Output of echo "Hello World"  will be stored in devops.txt file .
+man echo                          //man command is used to get information of a particular command . Here i am trying to know more about echo command.
+cat devops.txt | tr a-z A-Z > DEVOPS.txt      //Here it says that for the content of devops.txt , translate each character to upper case and then store it in DEVOPS.txt
+> Redirect symbol (Redirecting the output to another file)
+| pipe symbol(output of first command will act as input for second command
+touch devops.txt        //touch is used to create new file
+cp devops.txt devops1.txt       //make copy of devops.txt as devops1.txt
+mv devops.txt. devops1.txt      //rename/move devops.txt as devops1.txt 
+cp -R  /test /test1             //copies the entire directory /test to /test1
+rm  devops.txt              //delete a file 
+rm -R   /test    //delete the directory test 
+rm -rf /test     //If file/directory is opened then we can use -f option to forcefully delete it .
+sudo            //Some commands need to be run as a superuser/admin user permission.It will ask for system password
+df -h         //disk space and volume space (man df command) . -h is human readable format
+ls -latr | head -n 10    //here Head command will show first 10 lines of ls command output
+ls -latr | tail  -n 10    //here tail  command will show last  10 lines of ls command output
+head and tail we can use in with file also . Like head -n 2 devops.txt
+diff devops.txt devops1.txt     //To list difference between two files . It will show the content that is not there in both files
+locate "*.txt"          //It will show all the files in the current work directory which wil have extension as .txt .
+find . -type f -name "devops.txt"      //find command to find a file or dir in the current directory .here i have defined the type as file and finding the file devops.txt in current directory
+* is wildcard . 
+
+Note : For detail on any command use man and try different arguments with it .
+
+Assignments :
+1. Create a file demo.txt using touch command and write around 20 lines in this file.
+2. Print the output of first 5 lines from demo.txt and then last 5 lines .
+3. find all the files inside your home directory whose last modification date is minimumm 20 minutes .Note:use man command to see arguments
+4. create a file server.txt in /home and then move server.txt with name as server1.txt to /home/random directory . Note you need to create random directory here.
+5. Delete the file server1.txt and the directory /home/random
