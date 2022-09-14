@@ -1,0 +1,21 @@
+Here i am creating a user as devops and a group as devops.Also deleting them .
+
+adduser devops :  add a user to the system.
+usermod devops --password devops : modify a user account.
+userdel devops :  delete a user account and related files.
+groupadd devops : add a group to the system.
+groupdel devops : remove a group from the system
+chage devops : change user password expiry information.
+
+Relevant files which will change when user/group is created/modified.
+cat /etc/passwd
+cat /etc/shadow
+cat /etc/group
+
+
+Assignment : 
+1. Create a group named as demo .
+2. create a user with your name in the group demo .
+3. Using chage command change the password for your user.
+4. Create a user with directory assigned as /var/lib.
+5. View the content in /etc/passwd and /etc/group
