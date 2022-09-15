@@ -1,0 +1,27 @@
+hostname : It gives the name assigned to the system in the network .Also It shows the system domain name.
+ifconfig : It is used to see current network settings on the system like its IP address .
+ping : Ping sends a packet of data to IP address or domain name , and see if packet is able to reach destination . Thus check if server is reachable or not.
+Like : ping www.google.com
+grep : It is used to display result based on a string filter . It is used to display the output based on regular expresssion .
+Like : ls -latr | grep devops
+ps -ef:list of user-initiated processes currently running in the current session.
+kill : If we want to kill  any process manually then use kill command .
+Like :kill -9 /bin/python3
+service: A service is a process or group of processes (commonly known as daemons) running continuously in the background, waiting for requests to come in (especially from clients).
+systemctl : Systemctl is a command that we use to monitor,list, start and stop services .
+Like : Systemctl start service-name
+       sytemctl stop service-name
+awk : It is used to manipulate data and generate reports .
+awk '{print $1,$4}' devops.txt ====> It will print the value of first and fourth column from devops.txt
+sed : sed is called as stream editor and it can perform lots of functions on file like searching, find and replace, insertion or deletion.
+sed 's/unix/linux/' devops.txt ====> Replacing unix with linux in devops.txt 
+df -h == It is called as disk file system and it's used to get a full summary of available and used disk space usage of the file system on the Linux system.
+
+
+Assignments :
+1. Install docker on centos machine .(Follow the doc https://docs.docker.com/engine/install/centos/)
+2. Enable ,start and stop the docker service using systemctl command.
+3. Store hostname, ip machine and disk usage  of your system in a file called as system-conf.txt
+4. In system-conf.txt replace ip machine with hostname of your machine.
+5. Ping myntra website and check if server is reachable or not.
+6. Kill the process running for your docker using kill command .
