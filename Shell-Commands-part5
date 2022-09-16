@@ -35,7 +35,6 @@ Read,write,execute to User
 read and write to group
 no permission to other 
 This can be acheived using the command (chmod 760 devops.txt) ==>this in numeric way
-chmod rwxrw---- devops.txt ==> This in symbolic way
 
 
 Now lets talk about how to change owner and group in linux:
@@ -43,7 +42,7 @@ chown user filename ==> Now the filename will be owned by user (lets say kriti)
 chown user:group filename ==>changing both the user and group of file
 chgrp group_name filename  ==>If you want to just change the group name for file
 
-
+su ---> To switch user: su kriti(switch user to kriti)
 Assignments:
 1. Create three users A,B and C. 
 2. Create a group D , assign B and C user to that group.
