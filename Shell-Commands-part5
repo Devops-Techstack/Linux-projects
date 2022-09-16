@@ -1,0 +1,52 @@
+File permissions in Linux:Each file or directory in linux is assigned with three types of owner i.e User,Group and others.
+Linux file ownership:
+USer -- User is owner of file ,By default who created the file is the onwer of file
+group: Group is defined as collection of users having the same permission . If you have a group of users from development team and want them to give same set
+of permissions for a file , then you can define permissions at group level and all the users inside that group will have same access.
+others: Other means access to the rest of world who is neither the owner or belong to any group.
+
+Linux file permissions:
+read : Permission to open and read a file .
+write : Permission to modify the content of file.
+execute : Execute permission means to run that command such as running .exe file for windows or .py for python code .
+
+To view the permission of file/dir assigned to the user,group or others run the command : ls -l
+Lets say you get output as -rw-r--r--  SA-sample.yaml.
+below is the detail of each character in -rw-r--r-- 
+- ===>It shows that the output is of file type .If its d then directory type.
+rw- ==> The first three character belongs to user means user has read and write access to the file . Execute is - means no execute permission on file.
+r--  ===> The next three character belongs to the group .Means the user assigned to the group will have only read access to the file .
+r--   ==> The next three character belongs to others .Means all the other people will have only read access to the file .
+
+
+Number	PermissionType	Symbol
+0	No Permission	—
+1	Execute	–x
+2	Write	-w-
+3	Execute+Write	-wx
+4	Read	      r–
+5	Read+Execute	r-x
+6	Read+Write	rw-
+7	read+Write+Execute	rwx
+
+chmod command:
+Lets say you have a file devops.txt and you want to give below permissions :This can either be done in numeric or symbolic way
+Read,write,execute to User
+read and write to group
+no permission to other 
+This can be acheived using the command (chmod 760 devops.txt) ==>this in numeric way
+chmod rwxrw---- devops.txt ==> This in symbolic way
+
+
+Now lets talk about how to change owner and group in linux:
+chown user filename ==> Now the filename will be owned by user (lets say kriti)
+chown user:group filename ==>changing both the user and group of file
+chgrp group_name filename  ==>If you want to just change the group name for file
+
+
+Assignments:
+1. Create three users A,B and C. 
+2. Create a group D , assign B and C user to that group.
+3. Create a file devops.txt with user A.
+4. Give Read,write and execute permission to Group D for devops.txt.Check if User B can modify the content of file and save it .
+5. Change the owner of devops.txt to User C.
