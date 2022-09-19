@@ -1,0 +1,47 @@
+The crontab is a list of commands that you want to run on a regular schedule,.
+
+ Linux Crontab Format
+ MIN HOUR DOM MON DOW CMD
+ 
+ For eg : 30 08 10 06 * ls -latr /home/  ==>30 – 30th Minute 08 – 08 AM 10 – 10th Day 06 – 6th Month (June) * – Every day of the week .
+ 
+ crontab -l ==> To view the crontab entries as the user root .
+ crontab -u user-name -l ===>> View the Crontab entry for other user .
+ 
+ To edit crontab entry : crontab -e
+ * * * * *  ls -latr /home/   ==> The * means all the possible unit — i.e every minute of every hour through out the year. 
+ 
+This example checks the status of docker service(including weekends) during the working hours 9 a.m – 6 p.m
+00 09-18 * * * /usr/local/bin/script-to-check-if-docker-running. 
+OR
+crontab -l
+* * * * * /root/hello.sh > ~/cron-test.txt
+
+script-to-check-if-docker-running.sh
+#!/bin/bash
+service="docker"
+/bin/systemctl -q is-active "$service.service"
+status=$?
+if [ "$status" == 0 ]; then
+    echo "OK"
+else
+    echo "Not ok"
+fi
+
+chmod 777 script-to-check-if-docker-running.sh
+
+To verify if cronjob is running :
+ grep "script-to-check-if-docker-running.sh" /var/log/cron
+ OR,
+ cat ~/cron-test.txt
+ 
+Cron special keywords and its meaning
+
+Keyword    Equivalent
+@yearly    0 0 1 1 *
+@daily     0 0 * * *
+@hourly    0 * * * *
+@reboot    Run at startup.
+ 
+ 
+ 
