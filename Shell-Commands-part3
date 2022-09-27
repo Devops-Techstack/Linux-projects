@@ -2,9 +2,11 @@ Here i am creating a user as devops and a group as devops.Also deleting them .
 
 adduser devops :  add a user to the system.
 usermod devops --password devops : modify a user account.
-userdel devops :  delete a user account and related files.
+usermod -a -G Group-name user-name --> Add user to grup
 groupadd devops : add a group to the system.
+userdel devops :  delete a user account and related files.
 groupdel devops : remove a group from the system
+
 chage devops : change user password expiry information.
 
 Relevant files which will change when user/group is created/modified.
